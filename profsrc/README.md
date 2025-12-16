@@ -1,14 +1,5 @@
-<b>
-<p align="center">
-<a href="https://github.com/xtatixone/tutorial">Tutorial</a>
-&nbsp;&nbsp;
-<a href="https://github.com/xtatixone/xtatix/wiki">Documentation</a>
-&nbsp;&nbsp;
-<a href="https://github.com/orgs/xtatixone/discussions">Discussions</a>
-&nbsp;&nbsp;
-<a href="https://github.com/sponsors/yshelldev">Sponsor</a>
-</p>
-</b>
+<div class="&$$navbar">
+</div>
 
 ![Logo](../assets/banner.png)
 
