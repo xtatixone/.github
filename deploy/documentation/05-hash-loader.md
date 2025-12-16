@@ -1,0 +1,55 @@
+# 5. Hash Loader
+
+# Hash Loaders
+
+The Hash Loader operator dynamically imports unique hashes for files, enabling their seamless use as identifiers in HTML attributes, CSS styles, and JavaScript code for efficient tracking and updates.
+
+## Watch Attributes Configuration
+
+Define which HTML attributes should watch for hashes based on file extensions. For example, to watch class and id attributes in HTML files, use this configuration:
+
+```json
+"extensions": { "html": [ "class", "id" ] }
+```
+This setup allows the Hash Loader to recognize and link hashes within those attributes automatically.
+
+## Using Hashes in Watch Attributes
+
+Place hashes directly as values in watched attributes by prefixing them with `#`:
+
+```xml
+<section id="#reg-id" class="#reg-class">
+```
+This links the hash dynamically to the HTML elements for tracking or live updates, enabling reactive styling or scripting tied to these unique identifiers.
+
+### Using Hashes Outside Watch Attributes
+
+When using hashes in other places like JavaScript, CSS, or non-watched attributes, prefix the hash follower with a backslash `\` to escape it, ensuring valid usage without conflicts:
+
+```html
+<div onload="func('\#reg-id')">
+
+<style>
+  .\#reg-class { ... }  
+</style>
+
+<script>
+  const id = "\#reg-id";
+  const className = "\#reg-class";
+
+  const className = ".\#unreg-class";
+  // Note: Unregistered hashes like ".\#unreg-class" will not appear in the rendered output.
+
+  function func(str) {
+    // Your function implementation
+  }
+</script>
+```
+
+Using this escaping keeps hashes valid across different contexts whether in HTML, styles, or scripts.
+
+### Additional Tips
+
+- Always escape hashes with `\#` outside watch attribute values.
+
+> This method ensures consistency and correctness when importing and using unique identifiers across your project files.

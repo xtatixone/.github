@@ -1,0 +1,127 @@
+# 6. Class Loader
+
+Class Loaders are special operators in Xtatix that signal the use of symbolic classes (sym-classes) within watch attributes. They distinguish sym-classes from conventional CSS classes, enabling their simultaneous use without conflicts or style collisions in complex projects.
+
+Unlike traditional CSS cascading, which applies styles globally, Class Loaders implement localized cascade control rules at the element level. This allows developers to precisely layer and control how sym-classes interact with each other and with existing styles, eliminating global cascade conflicts.
+
+### Core Concept
+
+Class Loaders create scoped cascade layers within an individual HTML element, applied in a strict sequence during compilation:
+
+> Scattered (~) → Ordered (+) → Final (=)
+
+Each variant represents a distinct cascade layer:
+
+- **Scattered (~):** Utility and atomic classes applied first, in a non-deterministic order.
+- **Ordered (+):** Classes applied after scattered, with explicit order-based control.
+- **Final (=):** Classes applied last, typically for dynamic or externally controlled styles.
+
+### Practical Cascade Flow
+
+```html
+<p class="~atomic +component =dynamic-prop">
+  <!-- 
+    1. `~` classes load first (atomic utilities, no strict cascade)
+    2. `+` classes override next based on declared order (component-level styles)
+    3. `=` classes apply last and have final precedence (dynamic props or conditional styles)
+  -->
+</p>
+```
+
+### Real-World Use Cases
+
+- `~`: For atomic utilities such as padding and margins where no precise cascade ordering is needed.
+- `+`: For component styles that require explicit override control.
+- `=`: For state or property-driven styles in frameworks that need last-layer authority.
+
+> Enable project theme option in the sandbox toolbar enables global design tokens from your current design system, so turn it on to see live changes.
+
+## Scattered Class Loader (`~`)
+
+The Scattered Class Loader (`~`) applies utility and atomic classes in a non-deterministic way. It avoids reliable style cascading, especially in complex or deeply nested components, providing low-specificity control without predictable inheritance.
+
+### Key Limitations
+- Does not cascade styles reliably in nested components, making inheritance unpredictable.
+- Styles may change continuously due to this unpredictable loading behavior.
+
+### Syntax and Usage
+- Prefix sym-classes with a backslash when used outside watch attribute values: `\~`.
+
+```html
+<sketch class-loader$scattered>
+    <p class="~tx$size-h1 ~tx$size-h2" onload="func('\~align-center')">Paragraph</p>
+</sketch>
+<p class="~tx$size-h1 ~tx$size-h2" onload="func('\~align-center')">Paragraph</p>
+<script>
+    const classname = `\~tx$size-h1`;
+</script>
+```
+Escape the tilde in JavaScript template literals or event handlers to maintain functionality.
+
+### When to Use
+
+- Best suited for utilities and atomic classes that do not overlap.
+- Avoid using it when stable or nested style propagation is required.
+
+
+## Ordered Class Loader (`+`)
+
+The Ordered Class Loader (+) applies classes after scattered classes, allowing explicit control over cascading order within a single element.
+
+### Usage Restrictions
+
+- This operator can only be used inside the values of HTML tag attributes.
+- It cannot be used outside tag attributes (e.g., in JavaScript or styles).
+
+### Example
+
+```html
+<sketch class-loader$ordered>
+    <p class="~tx$size-h1 ~tx$size-h2 +tx$size-h3 +tx$size-h2" onload="func('\+align-center')">Paragraph</p>
+</sketch>
+<p class="~tx$size-h1 ~tx$size-h2 +tx$size-h2 +tx$size-h3" onload="func('\+align-center')">Paragraph</p>
+<script>
+    const classname = `\=tx$size-h1`; // Operator not allowed outside tag attributes
+</script>
+```
+
+### Cascading Behavior
+
+- The cascade follows the exact order of classes within the attribute's value.
+- Classes with `+` are applied after scattered ~ classes, overriding them if necessary.
+- In the example, `tx$size-h2` applied with `+` comes last and thus takes precedence.
+
+### When to Use
+
+- Use to control precisely which styles override others within the same element.
+- Handy when combining conflicting utility classes or higher order component classes, to make style application predictable.
+
+## Final Class Loader (`=`)
+
+The Final Class Loader operator `=` applies classes after both scattered `~` and ordered `+` classes, but it does not provide explicit control over the cascading order.
+
+### Usage and Syntax
+
+- It is used inside tag attribute values.
+- Outside watch attribute values (e.g. JavaScript), escape with a backslash: `\=`.
+
+```html
+<sketch class-loader$final>
+     <p class="~tx$size-h1 ~tx$size-h2 +tx$size-h3 =tx$size-h4 =tx$size-h5"> paragraph </p>
+</sketch>
+<p class="~tx$size-h1 ~tx$size-h2 +tx$size-h3 =tx$size-h4 =tx$size-h5"> paragraph </p>
+<script>
+    const classname = `\=tx$size-h1`;
+</script>
+```
+
+### Behavior
+
+- The final classes are applied last and may cause continuous style changes due to their unpredictable cascading.
+- The cascade order is less explicit compared to the Ordered Class Loader.
+
+### When to Use
+
+- Ideal for external actions that come from outside the element's usual style scope, such as prop passing in JavaScript frameworks.
+- Useful for conditional logic where styles are applied dynamically and may change frequently.
+- This loader helps handle dynamic styling situations where final overrides are necessary but strict cascading order control is not required.

@@ -1,0 +1,68 @@
+{
+  "name": "documentation",
+  "path": "documentation",
+  "slug": "documentation",
+  "files": [
+    {
+      "name": "00-installation.md",
+      "path": "documentation/00-installation.md",
+      "slug": "00-installation",
+      "metadata": {}
+    },
+    {
+      "name": "01-command.md",
+      "path": "documentation/01-command.md",
+      "slug": "01-command",
+      "metadata": {}
+    },
+    {
+      "name": "02-example.md",
+      "path": "documentation/02-example.md",
+      "slug": "02-example",
+      "metadata": {}
+    },
+    {
+      "name": "03-directory.md",
+      "path": "documentation/03-directory.md",
+      "slug": "03-directory",
+      "metadata": {}
+    },
+    {
+      "name": "04-libraries.md",
+      "path": "documentation/04-libraries.md",
+      "slug": "04-libraries",
+      "metadata": {}
+    },
+    {
+      "name": "05-hash-loader.md",
+      "path": "documentation/05-hash-loader.md",
+      "slug": "05-hash-loader",
+      "metadata": {}
+    },
+    {
+      "name": "06-class-loader.md",
+      "path": "documentation/06-class-loader.md",
+      "slug": "06-class-loader",
+      "metadata": {}
+    },
+    {
+      "name": "07-composing.md",
+      "path": "documentation/07-composing.md",
+      "slug": "07-composing",
+      "metadata": {}
+    },
+    {
+      "name": "08-custom-tags.md",
+      "path": "documentation/08-custom-tags.md",
+      "slug": "08-custom-tags",
+      "metadata": {}
+    },
+    {
+      "name": "09-appendix.md",
+      "path": "documentation/09-appendix.md",
+      "slug": "09-appendix",
+      "metadata": {}
+    }
+  ],
+  "folders": {}
+}

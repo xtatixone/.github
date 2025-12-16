@@ -1,0 +1,101 @@
+# 4. Libraries
+
+Composing libraries is essentially like managing a set of CSS files—sensibly grouping classes and naming them according to established standards. This approach ensures clarity, maintainability, and consistency across your stylesheets.
+
+Well-structured grouping and naming conventions help in scalable CSS architecture and make it easier to extend or modify the libraries over time.
+
+## Naming Files
+```
+{cluster}.{order}.{name}.css
+``` 
+
+- **cluster** : `string[A-Z a-z 0-9 -]`
+- **order** : `0|1|2`
+- **name** : `string[A-Z a-z 0-9 -]`
+
+## Managing Library Files
+
+```
+{cluster}{'$'*order}{Normalized(selector)}
+```
+#### Example
+
+The classes defined in this file are accessed from other files using the following symbolic class references.
+
+```css
+/* anim.1.animation.css */
+
+.none {
+  transition: none;
+} /* Sym-class: anim$none */
+
+.all {
+  transition: all 300ms ease;
+} /* Sym-class: anim$all */
+
+.transform {
+  transition: transform 300ms ease;
+} /* Sym-class: anim$transform */
+
+.opacity {
+  transition: opacity 300ms ease;
+} /* Sym-class: anim$opacity */
+
+.fade-in {
+  @--attach anim$_keyframes_fade-in;
+  animation-name: fade-in;
+} /* Sym-class: anim$fade-in */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+} /* Sym-class: anim$_keyframes_fade-in */
+```
+
+All the first order blocks of each file will have a corresponding symbolic class generated. This will be use full in cases where custom rule block has to be linked with classes.
+
+## Special CSS Directives
+
+```css
+.classname {
+  @--assign $class-1 $class-2 $class-1;
+  @--attach $attach-1 $attach-2;
+}
+```
+
+### `@--assign`
+- Compose styles from predefined classes from libraries using sym-classes.
+- Values derived from this action is overridden by explicit properties
+
+### `@--attach`
+- Creates dependency with other classes using its symbolic-class representation.
+- Library classes have dependent-style and composable-style of same value.  
+
+## Inheritence Pattern:
+
+- `order` is the hierarchy level for library inheritance. Lower order files provide base/axiom styles; higher order files can reference and extend lower orders. Use `order` to control assignment (`@--assign`) and attachment (`@--attach`) visibility and override behavior.
+
+### Types of Libraries
+
+- Provided editor intergration are aware of these libraries and give only appropriate suggestions according to active files.
+
+#### Axiom
+
+- `cluster` = `''`
+- A special cluster without a cluster-name. ( Example: 0.display.css )
+
+- In a file of **Order `n`**, symbolic classes may be referenced from other files using two distinct directives, with in the scope of `axiom` where permitted sources are:
+	-  `@--assign`: Files of **Order ≤ n−1**
+	-  `@--attach`: Files of **Order ≤ n**
+
+#### Clusters
+
+- Named clusters can access all symbolic classes from Axioms.
+- In a file of **Order `n`**, symbolic classes may be referenced from other files using two distinct directives, with in the scope of whole `axiom` and `cluster` were permitted sources are:
+	-  `@--assign`: Files of **Order ≤ n−1**
+	-  `@--attach`: Files of **Order ≤ n**

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCDN</title>
+    <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --container-bg: #ffffff;
+            --text-color: #111827;
+            --header-bg: #1f2937;
+            --header-text: #f3f4f6;
+            --folder-color: #374151;
+            --link-color: #2563eb;
+            --error-color: #dc2626;
+            --copy-icon-color: #6b7280;
+            --copy-icon-hover: #4b5563;
+            --hover-bg: rgba(229, 231, 235, 0.5);
+            --preview-bg: #f3f4f6;
+            --preview-border: #e5e7eb;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #111827;
+            --container-bg: #1f2937;
+            --text-color: #f9fafb;
+            --header-bg: #0f172a;
+            --header-text: #e5e7eb;
+            --folder-color: #9ca3af;
+            --link-color: #60a5fa;
+            --error-color: #f87171;
+            --copy-icon-color: #d1d5db;
+            --copy-icon-hover: #f3f4f6;
+            --hover-bg: rgba(55, 65, 81, 0.5);
+            --preview-bg: #1e293b;
+            --preview-border: #374151;
+        }
+
+        body {
+            --nav-height: 5rem;
+            font-family: "JetBrains Mono", monospace;
+            background: var(--container-bg);
+            color: var(--text-color);
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: var(--nav-height) calc(100vh - var(--nav-height));
+            flex-direction: column;
+        }
+
+        .nav {
+            background: var(--header-bg);
+            color: var(--header-text);
+            box-sizing: border-box;
+            padding: 15px 20px;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container.vertical {
+            flex-direction: column;
+        }
+
+        .main-content,
+        .preview-pane {
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex: 1 0 0;
+            border: solid var(--header-bg) 1px;
+        }
+
+        .tree {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px 0;
+        }
+
+        .tree ul {
+            list-style-type: none;
+            padding-left: 16px;
+            margin: 0;
+        }
+
+        .folder {
+            cursor: pointer;
+        }
+
+        .folder-header {
+            display: flex;
+            align-items: center;
+            padding: 4px 6px;
+            color: var(--folder-color);
+        }
+
+        .folder-header:hover {
+            border-radius: 4px;
+            background-color: var(--hover-bg);
+        }
+
+        .folder-toggle {
+            color: var(--copy-icon-color);
+            background: none;
+            border: none;
+            padding: 0;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .file {
+            display: flex;
+            align-items: center;
+            padding: 4px 4px;
+            cursor: pointer;
+        }
+
+        .file:hover {
+            border-radius: 4px;
+            background-color: var(--hover-bg);
+        }
+
+        .file span {
+            color: var(--link-color);
+            flex-grow: 1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error {
+            color: var(--error-color);
+            padding: 20px;
+        }
+
+        .copy-icon {
+            color: var(--copy-icon-color);
+            background: none;
+            border: none;
+            padding: 0;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .copy-icon:hover {
+            color: var(--copy-icon-hover);
+        }
+
+        .theme-toggle,
+        .split-toggle,
+        .path-toggle {
+            background: none;
+            border: none;
+            color: var(--header-text);
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .preview-pane {
+            border: solid var(--header-bg) 1px;
+            background: var(--preview-bg);
+            padding: 10px 20px;
+        }
+
+        .preview-content {
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        .preview-content.text {
+            white-space: pre-wrap;
+        }
+
+        .preview-content img,
+        .preview-content video,
+        .preview-content audio {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .preview-content audio {
+            width: 100%;
+        }
+
+        .preview-content video {
+            width: 100%;
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .split-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="nav">
+        XCDN
+        <div>
+            <button class="split-toggle" title="Toggle Split Mode"><i data-lucide="columns"></i></button>
+            <button class="theme-toggle" title="Toggle Dark Mode"><i data-lucide="sun"></i></button>
+            <button class="path-toggle" title="Toggle Full Path Copy"><i data-lucide="link"></i></button>
+        </div>
+    </h2>
+    <div class="container">
+        <div class="main-content">
+            <div class="tree" id="tree"></div>
+        </div>
+        <div class="preview-pane">
+            <div class="preview-content" id="preview-content">
+                <p>Select a file to preview its contents here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Define file type regex
+        const imageRegex = /\.(jpg|jpeg|png|gif|bmp)$/i;
+        const videoRegex = /\.(mp4|webm|ogg)$/i;
+        const audioRegex = /\.(mp3|wav|ogg)$/i;
+        const markdownRegex = /\.md$/i;
+        const textRegex = /\.(txt|text)$/i;
+        const htmlRegex = /\.(html?|htm)$/i;
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i data-lucide="moon"></i>';
+            lucide.createIcons();
+        }
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<i data-lucide="sun"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i data-lucide="moon"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+            lucide.createIcons();
+        });
+
+        // Split toggle
+        const splitToggle = document.querySelector('.split-toggle');
+        const container = document.querySelector('.container');
+        if (localStorage.getItem('split') === 'vertical') {
+            container.classList.add('vertical');
+            splitToggle.innerHTML = '<i data-lucide="split"></i>';
+            lucide.createIcons();
+        }
+        splitToggle.addEventListener('click', () => {
+            container.classList.toggle('vertical');
+            splitToggle.innerHTML = container.classList.contains('vertical')
+                ? '<i data-lucide="split"></i>'
+                : '<i data-lucide="columns"></i>';
+            localStorage.setItem('split', container.classList.contains('vertical') ? 'vertical' : 'horizontal');
+            lucide.createIcons();
+        });
+
+        // Path toggle
+        const pathToggle = document.querySelector('.path-toggle');
+        let includeFullPath = localStorage.getItem('fullPath') === 'true'; // Explicitly parse as boolean
+        if (!includeFullPath) {
+            pathToggle.innerHTML = '<i data-lucide="link-2-off"></i>';
+            lucide.createIcons();
+        }
+        pathToggle.addEventListener('click', () => {
+            includeFullPath = !includeFullPath;
+            pathToggle.innerHTML = includeFullPath
+                ? '<i data-lucide="link"></i>'
+                : '<i data-lucide="link-2-off"></i>';
+            localStorage.setItem('fullPath', includeFullPath.toString()); // Store as string
+            lucide.createIcons();
+        });
+
+        // Fetch and render file tree
+        const href = window.location.href.replace(/\/index\.html$/, "").replace(/\/+$/, "") + "/";
+        const pathname = window.location.pathname.replace(/\/index\.html$/, "").replace(/\/+$/, "") + "/";
+
+        fetch(pathname + 'index.json')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                const treeElement = document.getElementById('tree');
+                renderTree(data, treeElement);
+            })
+            .catch(error => {
+                document.getElementById('tree').innerHTML = `<p class="error">Error: ${error.message}</p>`;
+            });
+
+        function renderTree(node, parentElement) {
+            const ul = document.createElement('ul');
+            parentElement.appendChild(ul);
+
+            if (node.folders) {
+                Object.values(node.folders).forEach(folder => {
+                    const li = document.createElement('li');
+                    li.className = 'folder';
+                    const headerDiv = document.createElement('div');
+                    headerDiv.className = 'folder-header';
+                    const toggleButton = document.createElement('button');
+                    toggleButton.className = 'folder-toggle';
+                    toggleButton.innerHTML = '<i data-lucide="folder"></i>';
+
+                    // Add click handler for the toggle button itself
+                    toggleButton.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent folder expansion
+                        const folderPath = includeFullPath ? href + '/index.json' : pathname + '/index.json';
+                        navigator.clipboard.writeText(folderPath).then(() => {
+                            toggleButton.innerHTML = '<i data-lucide="check"></i>';
+                            lucide.createIcons();
+                            setTimeout(() => {
+                                toggleButton.innerHTML = folder.subUl?.classList.contains('hidden')
+                                    ? '<i data-lucide="folder"></i>'
+                                    : '<i data-lucide="folder-open"></i>';
+                                lucide.createIcons();
+                            }, 2000);
+                        });
+                    });
+
+                    headerDiv.appendChild(toggleButton);
+                    headerDiv.appendChild(document.createTextNode(folder.name));
+                    li.appendChild(headerDiv);
+                    const subUl = document.createElement('ul');
+                    subUl.className = 'hidden';
+                    folder.subUl = subUl; // Store reference to subUl
+                    li.appendChild(subUl);
+                    ul.appendChild(li);
+
+                    headerDiv.addEventListener('click', () => {
+                        const isHidden = subUl.classList.contains('hidden');
+                        subUl.classList.toggle('hidden');
+                        toggleButton.innerHTML = isHidden ? '<i data-lucide="folder-open"></i>' : '<i data-lucide="folder"></i>';
+                        lucide.createIcons();
+
+                        if (isHidden && !subUl.hasAttribute('data-loaded')) {
+                            renderTree(folder, subUl);
+                            subUl.setAttribute('data-loaded', 'true');
+                        }
+                    });
+                });
+            }
+
+            if (node.files && Array.isArray(node.files)) {
+                node.files.forEach(file => {
+                    const li = document.createElement('li');
+                    li.className = 'file';
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-icon';
+                    copyButton.innerHTML = '<i data-lucide="copy"></i>';
+                    const fileSpan = document.createElement('span');
+                    fileSpan.textContent = file.name;
+                    li.appendChild(copyButton);
+                    li.appendChild(fileSpan);
+                    ul.appendChild(li);
+
+                    const fullUrl = includeFullPath ? href + file.path : pathname + file.path;
+                    copyButton.addEventListener('click', () => {
+                        navigator.clipboard.writeText(fullUrl).then(() => {
+                            copyButton.innerHTML = '<i data-lucide="check"></i>';
+                            lucide.createIcons();
+                            setTimeout(() => {
+                                copyButton.innerHTML = '<i data-lucide="copy"></i>';
+                                lucide.createIcons();
+                            }, 2000);
+                        });
+                    });
+
+                    li.addEventListener('click', () => {
+                        console.log('File clicked:', file.name, 'Path:', file.path);
+                        const previewContent = document.getElementById('preview-content');
+                        previewContent.innerHTML = '';
+
+                        const isImage = imageRegex.test(file.name);
+                        const isVideo = videoRegex.test(file.name);
+                        const isAudio = audioRegex.test(file.name);
+                        const isMarkdown = markdownRegex.test(file.name);
+                        const isText = textRegex.test(file.name);
+                        const isHtml = htmlRegex.test(file.name);
+
+                        if (isImage) {
+                            const img = document.createElement('img');
+                            img.src = file.path;
+                            previewContent.appendChild(img);
+                        } else if (isVideo) {
+                            const video = document.createElement('video');
+                            video.src = file.path;
+                            video.controls = true;
+                            previewContent.appendChild(video);
+                        } else if (isAudio) {
+                            const audio = document.createElement('audio');
+                            audio.src = file.path;
+                            audio.controls = true;
+                            previewContent.appendChild(audio);
+                        } else if (isMarkdown || isText) {
+                            fetch(pathname + file.path)
+                                .then(response => {
+                                    if (!response.ok) throw new Error(`Failed to fetch ${file.path}: ${response.status}`);
+                                    return response.text();
+                                })
+                                .then(text => {
+                                    if (isMarkdown) {
+                                        previewContent.innerHTML = marked.parse(text);
+                                    } else {
+                                        previewContent.textContent = text;
+                                    }
+                                    previewContent.className = 'preview-content text';
+                                })
+                                .catch(error => {
+                                    console.error('Fetch error:', error);
+                                    previewContent.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+                                });
+                        } else if (isHtml) {
+                            fetch(pathname + file.path)
+                                .then(response => {
+                                    if (!response.ok) throw new Error(`Failed to fetch ${file.path}: ${response.status}`);
+                                    return response.text();
+                                })
+                                .then(html => {
+                                    previewContent.innerHTML = html;
+                                    previewContent.className = 'preview-content';
+                                })
+                                .catch(error => {
+                                    console.error('Fetch error:', error);
+                                    previewContent.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+                                });
+                        } else {
+                            previewContent.innerHTML = '<p>Preview not available for this file type.</p>';
+                        }
+                    });
+                });
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>

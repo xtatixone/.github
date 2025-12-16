@@ -1,0 +1,26 @@
+{
+  "name": "agreements",
+  "path": "agreements",
+  "slug": "agreements",
+  "files": [
+    {
+      "name": "license.md",
+      "path": "agreements/license.md",
+      "slug": "license",
+      "metadata": {}
+    },
+    {
+      "name": "privacy.md",
+      "path": "agreements/privacy.md",
+      "slug": "privacy",
+      "metadata": {}
+    },
+    {
+      "name": "terms.md",
+      "path": "agreements/terms.md",
+      "slug": "terms",
+      "metadata": {}
+    }
+  ],
+  "folders": {}
+}
