@@ -23,8 +23,6 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 
 #### 🚀 What XTATIX Delivers
 
-![Logo](../assets/preview.png)
-
 - **Unified Syntax for CSS + HTML** — Structure and style in one place, no context-switching.  
 - **Standardized Syntax for CSS Frameworks** — Consistent syntax whether you use built-in or external frameworks.  
 - **Component‑First Design** — Scoped composition without JavaScript framework overhead.  
@@ -46,7 +44,7 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 
 > <details>
 > <summary>
-> <b>Why another framework, you ask?...</b>
+> <b>Why another JS framework, you ask?...</b>
 > <br /> Not a Css/Js framework. Actually not even a framewwork.
 > </summary>
 > <hr />
