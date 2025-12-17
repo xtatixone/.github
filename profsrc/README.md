@@ -1,7 +1,7 @@
 <div class="&$$navbar">
 </div>
 
-![Logo](../assets/banner.png)
+![Logo](../assets/preview.png)
 
 
 XTATIX unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
