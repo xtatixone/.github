@@ -11,7 +11,7 @@
   
 </div>
 
-![Logo](../assets/preview.png)
+![Logo](../assets/banner.png)
 
 
 XTATIX unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
@@ -22,6 +22,8 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 - **Compile-Time Preprocessor** — Converts the declarative XTATIX syntax directly to vanilla HTML/CSS at build time, ensuring zero runtime overhead.
 
 #### 🚀 What XTATIX Delivers
+
+![Logo](../assets/preview.png)
 
 - **Unified Syntax for CSS + HTML** — Structure and style in one place, no context-switching.  
 - **Standardized Syntax for CSS Frameworks** — Consistent syntax whether you use built-in or external frameworks.  
