@@ -1,3 +1,4 @@
+
 <div class="~$$navbar">
 <b><p align="center">
     <a href="https://github.com/xtatixone/tutorial">Tutorial</a>
@@ -11,7 +12,7 @@
   
 </div>
 
-![Logo](./assets/banner.png)
+![Banner](../assets/banner.png)
 
 
 XTATIX unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
