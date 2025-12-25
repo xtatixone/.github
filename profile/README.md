@@ -1,17 +1,22 @@
-<div class="&$$navbar">
-</div>
 
-![Logo](./assets/banner.png)
+<b><p align="center">
+    <a href="https://github.com/alchira/tutorial">Tutorial</a>
+    &nbsp; · &nbsp;
+    <a href="https://github.com/alchira/package/wiki">Documentation</a>
+    &nbsp; · &nbsp;
+    <a href="https://github.com/orgs/alchira/discussions">Discussions</a>
+    &nbsp; · &nbsp;
+    <a href="https://github.com/sponsors/yshelldev">Sponsor</a>
+</p></b>
 
 
-XTATIX unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
+"Do you see it, Alfred? Look closely at the stream. For decades, they told us these two souls—HTML and CSS—must live in separate vessels. They called it 'separation of concerns.' I call it a tragedy of fragmentation.
 
-#### ⚙️ Core Technology
+But look now... there is no 'link' tag. There is no 'external stylesheet.' I have spliced the DNA of the structure directly into the spirit of the style. They are no longer two things pretending to be one; they are a Successful Fusion.
 
-- **Built in Go (Golang)** — Provides a fast, stable foundation for high-performance processing.
-- **Compile-Time Preprocessor** — Converts the declarative XTATIX syntax directly to vanilla HTML/CSS at build time, ensuring zero runtime overhead.
+It`s stable, Alfred. It`s declarative. It`s... beautiful. We`ve created a Chimera that doesn't just bark—it renders."
 
-#### 🚀 What XTATIX Delivers
+#### 🚀 What ALCHIRA Delivers
 
 ![Logo](../assets/preview.png)
 
@@ -38,7 +43,7 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 
 > [!NOTE]  
 > ### 💖 [**Sponsor Project & Support Development**](https://github.com/sponsors/yshelldev)
-> **Xtatix is 100% bootstrapped.** 
+> **Alchira is 100% bootstrapped.** 
 > In the preview period . Your sponsorship unlocks new features for the entire community as milestones are reached.
 > 
 > 🌱 [**Become Supporter: $5**](https://github.com/sponsors/yshelldev)  

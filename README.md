@@ -1,10 +1,10 @@
 <div class="~$$navbar">
 <b><p align="center">
-    <a href="https://github.com/xtatixone/tutorial">Tutorial</a>
+    <a href="https://github.com/alchira/tutorial">Tutorial</a>
     &nbsp; · &nbsp;
-    <a href="https://github.com/xtatixone/xtatix/wiki">Documentation</a>
+    <a href="https://github.com/alchira/package/wiki">Documentation</a>
     &nbsp; · &nbsp;
-    <a href="https://github.com/orgs/xtatixone/discussions">Discussions</a>
+    <a href="https://github.com/orgs/alchira/discussions">Discussions</a>
     &nbsp; · &nbsp;
     <a href="https://github.com/sponsors/yshelldev">Sponsor</a>
 </p></b>
@@ -14,14 +14,14 @@
 ![Logo](../assets/banner.png)
 
 
-XTATIX unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
+ALCHIRA unifies HTML structure and CSS styling into a single declarative language. Write responsive layouts in one coherent syntax, compiled to optimized vanilla web code at build time.
 
 #### ⚙️ Core Technology
 
 - **Built in Go (Golang)** — Provides a fast, stable foundation for high-performance processing.
-- **Compile-Time Preprocessor** — Converts the declarative XTATIX syntax directly to vanilla HTML/CSS at build time, ensuring zero runtime overhead.
+- **Compile-Time Preprocessor** — Converts the declarative ALCHIRA syntax directly to vanilla HTML/CSS at build time, ensuring zero runtime overhead.
 
-#### 🚀 What XTATIX Delivers
+#### 🚀 What ALCHIRA Delivers
 
 - **Unified Syntax for CSS + HTML** — Structure and style in one place, no context-switching.  
 - **Standardized Syntax for CSS Frameworks** — Consistent syntax whether you use built-in or external frameworks.  
@@ -112,7 +112,7 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 
 > [!NOTE]  
 > ### 💖 [**Sponsor Project & Support Development**](https://github.com/sponsors/yshelldev)
-> **Xtatix is 100% bootstrapped.** 
+> **Alchira is 100% bootstrapped.** 
 > In the preview period . Your sponsorship unlocks new features for the entire community as milestones are reached.
 > 
 > 🌱 [**Become Supporter: $5**](https://github.com/sponsors/yshelldev)  
@@ -142,7 +142,7 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 <hr/>
 
 **Preview:** `~tailwind ~bootstrap ~custom-brand`
-**Details:** Unified rulesets for frameworks built on XTATIX. Create/share personalized CSS ecosystems.
+**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
 
   </details>
 <img src="../assets/button.png" alt="Description" height="32rem">
