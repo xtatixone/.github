@@ -1,13 +1,15 @@
 
-<b><p align="center">
-    <a href="https://github.com/alchira/tutorial">Tutorial</a>
-    &nbsp; · &nbsp;
-    <a href="https://github.com/alchira/package/wiki">Documentation</a>
-    &nbsp; · &nbsp;
-    <a href="https://github.com/orgs/alchira/discussions">Discussions</a>
-    &nbsp; · &nbsp;
-    <a href="https://github.com/sponsors/yshelldev">Sponsor</a>
-</p></b>
+  <b>
+    <p align="center">
+      <a href="https://github.com/alchira/tutorial">Tutorial</a>
+      &nbsp; · &nbsp;
+      <a href="https://github.com/alchira/package/wiki">Documentation</a>
+      &nbsp; · &nbsp;
+      <a href="https://github.com/orgs/alchira/discussions">Discussions</a>
+      &nbsp; · &nbsp;
+      <a href="https://github.com/sponsors/yshelldev">Sponsor</a>
+    </p>
+  </b>
 
 
 "Do you see it, Alfred? Look closely at the stream. For decades, they told us these two souls—HTML and CSS—must live in separate vessels. They called it 'separation of concerns.' I call it a tragedy of fragmentation.
