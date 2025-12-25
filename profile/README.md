@@ -64,4 +64,4 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 ### 🔒 Future Unlocks
 <details class="&feature$$hash-denest"></details>
 <details class="&feature$$rule-wrappers"></details>
-<details class="&feature$$sandbox"></details>
+<details class="&feature$$sketchpad"></details>

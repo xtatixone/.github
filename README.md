@@ -166,8 +166,8 @@ XTATIX unifies HTML structure and CSS styling into a single declarative language
 **Details:** Compound selectors with stateful directives and wrappers.
 
   </details>
-<details class="~feature$$sandbox">
-<summary><b>📦 Component Sandbox</b><br/>Live previews + template import/export</summary>
+<details class="~feature$$sketchpad">
+<summary><b>📦 Component Sketchpad</b><br/>Live previews + template import/export</summary>
 <hr/>
 
 **Preview:** Drag/drop components with real-time rendering
