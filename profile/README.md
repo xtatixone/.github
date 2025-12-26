@@ -125,18 +125,69 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 ## Features
 
 ### ✅ Available Now
+
+<details>
+
+<summary><b>🎁 Class Loader <span class="text-muted">(Free)</span></b><br/>Inline cascade control, component class composition, variants</summary>
+<hr/>
+
+**Preview:** `<div class="btn ~primary ~hover ~lg">Click</div>`  
+**Details:** Composes classes at compile-time with variant extensions and scoped isolation.
+
+</details>
+
 <details class="&feature$$class-loader"></details>
 
 ---
 
 ### ⏳ Next Milestone ($200)
 > **0% → $200**  
-<details class="&feature$$flavours"></details>
+
+<details>
+
+<summary><b>🍧 Flavours </b><br/>Custom CSS frameworks & shareable flavours</summary>
+<hr/>
+
+**Preview:** `~tailwind ~bootstrap ~custom-brand`
+**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
+
+</details>
+
 <img src="../assets/button.png" alt="Description" height="32rem">
 
 ---
 
 ### 🔒 Future Unlocks
-<details class="~feature$$hash-denest">feature$$hash-denest"</details>
-<details class="~feature$$rule-wrappers">feature$$rule-wrappers"</details>
-<details class="~feature$$sketchpad">feature$$sketchpad"</details>
+
+<details>
+
+<summary><b>🧩 Hash Loader & CSS Denest</b><br/>Unique IDs + destructuring for state composition</summary>
+<hr/>
+
+**Preview:** `~user#avatar ~active` → `.u1234_user_avatar.is_active`  
+**Details:** Compile-time scoped IDs with nested state flattening.
+
+</details>
+
+
+<details>
+
+<summary><b>📜 Hashrules & Wrappers</b><br/>Precise directives + conditional selectors</summary>
+<hr/>
+
+**Preview:** `@media(~mobile) { ~primary }`
+**Details:** Compound selectors with stateful directives and wrappers.
+
+</details>
+
+
+<details>
+
+<summary><b>📦 Component Sketchpad</b><br/>Live previews + template import/export</summary>
+<hr/>
+
+**Preview:** Drag/drop components with real-time rendering
+**Details:** Visual composition workspace with cross-project templates.
+
+</details>
+
