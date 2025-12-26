@@ -37,6 +37,90 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 - **Live Component Preview** — Isolated component composition with real-time updates.  
 - **Creative Toolbox Philosophy** — Not a framework, but a system that flexes around your workflow.
 
+
+## Features
+
+> [!NOTE]  
+> ### 💖 [**Sponsor Project & Support Development**](https://github.com/sponsors/yshelldev)
+> **Alchira is 100% bootstrapped.** 
+> In the preview period . Your sponsorship unlocks new features for the entire community as milestones are reached.
+> 
+> 🌱 [**Become Supporter: $5**](https://github.com/sponsors/yshelldev)  
+> 🚀 [**Become Believer: $20**](https://github.com/sponsors/yshelldev)  
+> 🔥 [**Become Backer: $80**](https://github.com/sponsors/yshelldev)  
+> 💎 [**Become Patron: $250**](https://github.com/sponsors/yshelldev)  
+> ✨ [**Custom Amount: $$$**](https://github.com/sponsors/yshelldev)
+
+---
+
+### ✅ Available Now
+
+<details>
+
+<summary><b>🎁 Class Loader <span class="text-muted">(Free)</span></b><br/>Inline cascade control, component class composition, variants</summary>
+<hr/>
+
+**Preview:** `<div class="btn ~primary ~hover ~lg">Click</div>`  
+**Details:** Composes classes at compile-time with variant extensions and scoped isolation.
+
+</details>
+
+<details class="&feature$$class-loader"></details>
+
+---
+
+### ⏳ Next Milestone ($200)
+> **0% → $200**  
+
+<details>
+
+<summary><b>🍧 Flavours </b><br/>Custom CSS frameworks & shareable flavours</summary>
+<hr/>
+
+**Preview:** `~tailwind ~bootstrap ~custom-brand`
+**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
+
+</details>
+
+<img src="../assets/button.png" alt="Description" height="32rem">
+
+---
+
+### 🔒 Future Unlocks
+
+<details>
+
+<summary><b>🧩 Hash Loader & CSS Denest</b><br/>Unique IDs + destructuring for state composition</summary>
+<hr/>
+
+**Preview:** `~user#avatar ~active` → `.u1234_user_avatar.is_active`  
+**Details:** Compile-time scoped IDs with nested state flattening.
+
+</details>
+
+
+<details>
+
+<summary><b>📜 Hashrules & Wrappers</b><br/>Precise directives + conditional selectors</summary>
+<hr/>
+
+**Preview:** `@media(~mobile) { ~primary }`
+**Details:** Compound selectors with stateful directives and wrappers.
+
+</details>
+
+
+<details>
+
+<summary><b>📦 Component Sketchpad</b><br/>Live previews + template import/export</summary>
+<hr/>
+
+**Preview:** Drag/drop components with real-time rendering
+**Details:** Visual composition workspace with cross-project templates.
+
+</details>
+
+
 ---
 
 ### How it all came to be?
@@ -106,88 +190,4 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 > My battlefield was clear enough: **HTML** and **CSS** — **structure**, **style**, and all the **chaos** that comes with it.
 >
 > </details>
-
-
-
----
-
-> [!NOTE]  
-> ### 💖 [**Sponsor Project & Support Development**](https://github.com/sponsors/yshelldev)
-> **Alchira is 100% bootstrapped.** 
-> In the preview period . Your sponsorship unlocks new features for the entire community as milestones are reached.
-> 
-> 🌱 [**Become Supporter: $5**](https://github.com/sponsors/yshelldev)  
-> 🚀 [**Become Believer: $20**](https://github.com/sponsors/yshelldev)  
-> 🔥 [**Become Backer: $80**](https://github.com/sponsors/yshelldev)  
-> 💎 [**Become Patron: $250**](https://github.com/sponsors/yshelldev)  
-> ✨ [**Custom Amount: $$$**](https://github.com/sponsors/yshelldev)
-
-## Features
-
-### ✅ Available Now
-
-<details>
-
-<summary><b>🎁 Class Loader <span class="text-muted">(Free)</span></b><br/>Inline cascade control, component class composition, variants</summary>
-<hr/>
-
-**Preview:** `<div class="btn ~primary ~hover ~lg">Click</div>`  
-**Details:** Composes classes at compile-time with variant extensions and scoped isolation.
-
-</details>
-
-<details class="&feature$$class-loader"></details>
-
----
-
-### ⏳ Next Milestone ($200)
-> **0% → $200**  
-
-<details>
-
-<summary><b>🍧 Flavours </b><br/>Custom CSS frameworks & shareable flavours</summary>
-<hr/>
-
-**Preview:** `~tailwind ~bootstrap ~custom-brand`
-**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
-
-</details>
-
-<img src="../assets/button.png" alt="Description" height="32rem">
-
----
-
-### 🔒 Future Unlocks
-
-<details>
-
-<summary><b>🧩 Hash Loader & CSS Denest</b><br/>Unique IDs + destructuring for state composition</summary>
-<hr/>
-
-**Preview:** `~user#avatar ~active` → `.u1234_user_avatar.is_active`  
-**Details:** Compile-time scoped IDs with nested state flattening.
-
-</details>
-
-
-<details>
-
-<summary><b>📜 Hashrules & Wrappers</b><br/>Precise directives + conditional selectors</summary>
-<hr/>
-
-**Preview:** `@media(~mobile) { ~primary }`
-**Details:** Compound selectors with stateful directives and wrappers.
-
-</details>
-
-
-<details>
-
-<summary><b>📦 Component Sketchpad</b><br/>Live previews + template import/export</summary>
-<hr/>
-
-**Preview:** Drag/drop components with real-time rendering
-**Details:** Visual composition workspace with cross-project templates.
-
-</details>
 
