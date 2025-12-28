@@ -1,6 +1,4 @@
----
-title: Getting Started
----
+# Getting Started
 
 ## Node Package
 
@@ -52,30 +50,5 @@ al init {flavor-package-name}
 - Plug‑and‑play setup, ideal for trying Alchira or for small projects.
 
 ![Preview](./assets/preview.png)
-
----
-
-> - **Continue with tutorial repo: `git clone https://github.com/alchira/tutorial.git`**  
->   *Tutorial repo contains the same documentation in a more interactive manner.*
-
----
-
-
-> [!NOTE]
-> ## Runtime Integration Note for Tool Developers
-> 
-> Alchira Compiler enables efficient CSS compilation and enhanced workflows that other tools can leverage to produce optimized compiled outputs.
-> 
-> **If you intend to integrate Alchira Compiler as runtime tooling within your product, please be aware that specific licensing terms and conditions may apply. For detailed information and to discuss your particular use case, please contact the project maintainers directly.**
-> 
-> This ensures full compliance and tailored support for your integration needs.
-> 
-> ## Alchira Compiler Agreements
->   
-> Our documentation follows an auto-sync pattern to ensure you always have access to the latest versions.
-> 
-> - [License](https://www.alchira.io/agreements/license)
-> - [Privacy Policy](https://www.alchira.io/agreements/privacy)
-> - [Terms and Conditions](https://www.alchira.io/agreements/terms)
 
 ---

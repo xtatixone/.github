@@ -1,4 +1,4 @@
-# 8. Appendix
+# Appendix
 
 ## Errors & diagnostics
 
