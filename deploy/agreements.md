@@ -10,11 +10,11 @@ This ensures full compliance and tailored support for your integration needs.
 
 ## Alchira Compiler Agreements
   
-Our documentation follows an auto-sync pattern to ensure you always have access to the latest versions.
+Our documentation updates automatically so you always see the most current agreements and notifications.
 
-- [License](https://www.alchira.io/agreements/license)
-- [Privacy Policy](https://www.alchira.io/agreements/privacy)
-- [Terms and Conditions](https://www.alchira.io/agreements/terms)
+- [License](https://github.com/alchira/agreements/license)
+- [Privacy Policy](https://github.com/alchira/agreements/privacy)
+- [Terms and Conditions](https://github.com/alchira/agreements/terms)
 
 # License
 
@@ -30,8 +30,8 @@ Our documentation follows an auto-sync pattern to ensure you always have access 
 
 Subject to the terms of this Agreement, We grant You a limited, non-exclusive, non-transferable license to:
 
-- Download and use the Preview Package of Alchira free of charge during the preview period.
-- Integrate Alchira into your development tools and build processes solely for evaluation and testing.
+- Download and use the Preview Package of Alchira free of charge.
+- Integrate Alchira into your frontend development workflow and build processes.
 
 Any attempt to bypass or extend the preview period restrictions without authorization is prohibited and constitutes a violation of this Agreement.
 
@@ -45,7 +45,7 @@ You may not, without explicit prior written consent from Us:
 
 - Copy, modify, distribute or create derivative works of the source code or binaries.
 - Decompile, reverse-engineer, disassemble or attempt to discover the source code.
-- Remove or alter any copyright, trademark, or proprietary notices.
+- Remove or alter any copyright, or proprietary notices.
 
 ### 5. Community and Contributions
 
@@ -65,7 +65,7 @@ You agree to keep confidential all non-public information of Alchira Compiler, i
 
 ### 8. No Warranty
 
-Alchira is provided “AS IS” without warranties, express or implied. Real-time features are experimental and may change post-preview.
+Alchira is provided “AS IS” without warranties, express or implied. Experimental and may change post-preview.
 
 ### 9. Updates and Support
 
@@ -75,12 +75,13 @@ Updates during the preview period are at Our discretion. Support is provided thr
 
 ### Contact Information
 
-- **Website:** [www.alchira.io](https://www.alchira.io)  
+- **Website:** [github.com/alchira](https://github.com/alchira)  
 - **E-Mail:** [alchira@yshell.dev](mailto:alchira@yshell.dev)
 
 ---
 
-This EULA represents a binding legal agreement between You and Us regarding your use of Alchira during its preview period. By downloading, installing, or using Alchira, You acknowledge that You have read this Agreement, understand it, and agree to be bound by its terms.
+This EULA represents a binding legal agreement between You and Us regarding your use of Alchira during its preview period.
+By downloading, installing, or using Alchira, You acknowledge that You have read this Agreement, understand it, and agree to be bound by its terms.
 # Privacy Policy
 
 We respect your privacy while using Alchira. This Privacy Policy explains how we collect, use, and protect your information.
@@ -94,15 +95,14 @@ We respect your privacy while using Alchira. This Privacy Policy explains how we
 - Issue reports and communications used solely to improve Alchira and provide support.
 - Reasonable security measures implemented to protect data from unauthorized access or disclosure.
 
-### Policy Updates
-- This Privacy Policy may be updated periodically. 
-- Changes announced via [www.alchira.io](https://www.alchira.io) and community channels.
+### Policy Updates 
+- Changes announced via CLI and community channels.
 
 ---
 
 ### Contact Information
 - **Support:** [alchira@yshell.dev](mailto:alchira@yshell.dev)
-- **Website:** [https://www.alchira.io](https://www.alchira.io)
+- **Website:** [https://github.com/alchira](https://github.com/alchira)
 # Terms & Conditions
 
 ## Alchira Compiler Permissions
@@ -110,7 +110,7 @@ We respect your privacy while using Alchira. This Privacy Policy explains how we
 ### 1. User Conduct
 - **Permitted Use:** Personal use includes nearly all features for free.
 - **Prohibited Actions:** Misuse of Alchira or violation of license restrictions, such as reverse engineering, is strictly prohibited.
-- **Respect:** The Alchira kernel is proprietary technology. Please honor the confidentiality and intellectual property terms described in the License.
+- **Respect:** The Alchira compiler is proprietary technology. Please honor the confidentiality and intellectual property terms described in the License.
 
 ### 2. Tools Powered by Alchira
 - **Development Use:** Creating or distributing tools or applications powered by Alchira for public or commercial purposes requires a written agreement.
@@ -122,7 +122,7 @@ We respect your privacy while using Alchira. This Privacy Policy explains how we
 - **Data Collection:** No data collected unless explicitly shared with us.
 
 ### 5. Changes to Terms
-- **Updates:** These Terms & Conditions may be updated periodically. Changes posted at [https://github.com/alchira](https://https://github.com/alchira).
+- **Updates:** These Terms & Conditions may be updated periodically and latest notice will be provided by CLI tool itself.
 - **Acceptance:** Continued use after updates indicates acceptance of revised terms. Check periodically for major changes.
 
 #### Contact Information
