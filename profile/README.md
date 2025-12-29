@@ -32,8 +32,7 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 - **Scoped Classes by Default** — Automatic isolation for predictable, conflict-free styling.  
 - **Compile‑Time Unique ID Hashing** — Locally unique identifiers for precise scoping.  
 - **Inline Cascade Control** — Fine-grained style override control directly in markup.  
-- **Adaptive CSS Framework** — A stylesheet system that scales and evolves alongside your project as it grows.  
-- **Multi‑Mode Stylesheet Generation** — Generate modular or unified stylesheets based on your build.  
+- **Adaptive CSS Framework** — A stylesheet system that scales and evolves alongside your project as it grows.
 - **Live Component Preview** — Isolated component composition with real-time updates.  
 - **Creative Toolbox Philosophy** — Not a framework, but a system that flexes around your workflow.
 
@@ -53,38 +52,62 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 
 ---
 
-### ✅ Available Now
+### ✅ Available 
 
 
 <details>
 
-<summary><b>🎁 Class Loader <span class="text-muted">(Free)</span></b><br/>Inline cascade control, component class composition, variants</summary>
-<hr/>
+<summary>
+  <b>Mission 0: 🎁 Essentials</b>
+  <br />
+  Composing and Nesting, Inline cascade control, Variants, 1st Order Wrappers,
+  Dependent tracking.
+</summary>
+<hr />
 
-**Preview:** `<div class="btn ~primary ~hover ~lg">Click</div>`  
-**Details:** Composes classes at compile-time with variant extensions and scoped isolation.
+**Details:**  
+These feature alone gives you the a CSS framework that work along side your project starting from Zero.
 
-</details>
+**Preview:**
 
-
----
-
-### ⏳ Next Milestone ($200)
-
-> **0% → $200**  
+```html
+<!-- Compose -->
 
 
-<details>
-
-<summary><b>🍧 Flavours </b><br/>Custom CSS frameworks & shareable flavours</summary>
-<hr/>
-
-**Preview:** `~tailwind ~bootstrap ~custom-brand`
-**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
+<!-- Usage -->
+<button class="~demo$button_lL">
+  <span> Click Me </span>
+</button>
+```
 
 </details>
 
 <img src="../assets/button.png" alt="Description" height="32rem">
+
+---
+
+### ⏳ Next Mission: 
+
+> Unlocks once all previous issues have been resolved.
+
+
+<details>
+
+<summary>
+  <b>Mission 1: 📜 Chained Wrappers, Hashrules</b>
+  <br />
+  Precise directives + conditional selectors
+</summary>
+<hr />
+**Details:** Composes classes at compile-time with variant extensions. These
+feature alone gives you the a CSS framework that work along side your project
+starting from Zero. Compound selectors with stateful directives and wrappers.
+
+**Preview:** `<div class="btn ~primary ~hover ~lg">Click</div>`
+
+</details>
+
+
 
 ---
 
@@ -93,8 +116,25 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 
 <details>
 
-<summary><b>🧩 Hash Loader & CSS Denest</b><br/>Unique IDs + destructuring for state composition</summary>
-<hr/>
+<summary>
+  <b>Mission 2: 📚 Libraries</b>
+  <br />
+    Create reusable library-style symlinks for quick composition and reuse.
+</summary>
+<hr />
+**Details:**  
+Preserve preset symlinks for reuse while composing classes and loading classes with existing symlinks. This unlocks a familiar workflow similar to CSS frameworks and other tooling.
+</details>
+
+
+<details>
+
+<summary>
+  <b>Mission 3: 🧩 Hash Loader & CSS Denest</b>
+  <br />
+  Unique IDs + destructuring for state composition
+</summary>
+<hr />
 
 **Preview:** `~user#avatar ~active` → `.u1234_user_avatar.is_active`  
 **Details:** Compile-time scoped IDs with nested state flattening.
@@ -104,22 +144,30 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 
 <details>
 
-<summary><b>📜 Hashrules & Wrappers</b><br/>Precise directives + conditional selectors</summary>
-<hr/>
+<summary>
+  <b>Mission 4: 📦 Component Sketchpad</b>
+  <br />
+  Live previews
+</summary>
+<hr />
 
-**Preview:** `@media(~mobile) { ~primary }`
-**Details:** Compound selectors with stateful directives and wrappers.
+**Preview:** Drag/drop components with real-time rendering
+**Details:** Visual composition workspace with cross-project templates.
 
 </details>
 
 
 <details>
 
-<summary><b>📦 Component Sketchpad</b><br/>Live previews + template import/export</summary>
-<hr/>
+<summary>
+  <b>Mission 5: 🍧 Flavours </b>
+  <br />
+  Customize personalized CSS frameworks & shareable flavours
+</summary>
+<hr />
 
-**Preview:** Drag/drop components with real-time rendering
-**Details:** Visual composition workspace with cross-project templates.
+**Preview:** `~tailwind ~bootstrap ~custom-brand`
+**Details:** Unified rulesets for frameworks built on ALCHIRA. Create/share personalized CSS ecosystems.
 
 </details>
 
