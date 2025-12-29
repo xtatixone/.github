@@ -210,21 +210,16 @@ Unified rulesets for team-enforced styling systems. Create immutable libraries, 
 
 
 > <details>
+>
 > <summary>
 > <b>Why another framework, you ask?...</b>
 > <br /> Not a Css/Js framework. Actually not even a framework.
 > </summary>
 > <hr />
-> So what is it then? It's a **major fix for a minor problem**. A problem that
-> always manages to get in the way and turn into a constant source of
-> frustration. A worked on a few a landing pages in vanilla stack and it was
-> not a very pleasent experience HTML/CSS context switching, cascade hell,
-> scoping, style override, i hope i don't have to explain every one did went
-> through those. Then i tried a few frameworks astro, svelte and react(i might
-> get a lot, of hate for this, but it never really got clicked for me). Then i
-> tried a few frameworks astro, svelte and react(i might get a lot, of hate
-> for this, but it never really got clicked for me). And in addtion to those
-> framework, every time these problems were stacking up as they scale.
+> So what is it then? It's a **major fix for a minor problem**.  
+> A problem that always manages to get in the way and turn into a constant source of frustration. A worked on a few a landing pages in vanilla stack and it was not a very pleasent experience HTML/CSS context switching, cascade hell, scoping, style override, i hope i don't have to explain every one did went through those. 
+> Then i tried a few frameworks astro, svelte and react(i might get a lot, of hate for this, but react never really got clicked for me). And in addtion to those framework, every time these problems were stacking up as they scale. 
+>
 > </details>
 
 > <details>
