@@ -22,19 +22,14 @@ It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimer
 
 ### Install and Setup
 
-Alchira works independently of frameworks or languages. npm provides convenient distribution (most frontend devs have Node), but functions perfectly in any non-Node codebase.
-
 ```bash
     npm i -g alchira
+    pnpm add -g alchira
+    yarn global add alchira
+    bun add -g alchira
 ```
 
-Alternatively you can still use your preffered package manager(pnpm/yarn/bun).
-
-```bash
-pnpm add -g alchira
-yarn global add alchira
-bun add -g alchira
-```
+Alchira works independently of frameworks or languages. Using NPM regisry provides convenient distribution (most frontend devs have Node), but functions perfectly in any non-Node codebase.
 
 [**Continue →**](https://github.com/alchira/package/wiki)
 
@@ -93,7 +88,7 @@ These feature alone gives you the a CSS framework that work along side your proj
 
 
 <!-- Usage -->
-<button class="~demo$button_kW">
+<button class="~demo$button_lK">
   <span> Click Me </span>
 </button>
 ```
