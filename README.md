@@ -7,8 +7,6 @@ In traditional web development, you are often forced to juggle HTML templates an
 > ## End-User License Agreement (EULA)
 > By using this software, you agree to the terms and conditions outlined in the [End-User License Agreement](https://github.com/alchira/agreements/license).
 
----
-
 ### How it Works
 
 1. **Sketch your UI:** Wrap your elements in a `<sketch>` to define a regional boundary.
@@ -69,7 +67,7 @@ al init {flavor-package-name}
 
 ---
 
-> Clone the tutorial repository to get used to the tool with a intractive walkthrough guide
+> Clone the tutorial repository for an interactive walkthrough guide:
 > ```sh
 > git clone https://github.com/alchira/tutorial.git
 > ```

@@ -18,7 +18,7 @@ Our documentation updates automatically so you always see the most current agree
 
 # License
 
-## End User License Agreement (EULA) for Alchira Compiler
+## End User License Agreement (EULA) for Alchira Package
 
 ### 1. Definitions
 
