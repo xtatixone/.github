@@ -29,9 +29,9 @@ yarn global add alchira  # If you prefer yarn
 bun add -g alchira       # If you prefer bun
 ```
 
-Alchira works independently of frameworks or languages. Using NPM registry provides convenient distribution (most frontend devs have Node), but functions perfectly in any non-Node codebase.
+**Alchira is Framework/language independent. Works in any codebase (uses Node for orchestration).**. 
 
-[**Continue →**](https://github.com/alchira/package/wiki)
+[**Continue to Guide →**](https://github.com/alchira/package/wiki)
 
 #### 🚀 What ALCHIRA Delivers
 
@@ -212,7 +212,7 @@ Unified rulesets for team-enforced styling systems. Create immutable libraries, 
 > <details>
 > <summary>
 > <b>Why another framework, you ask?...</b>
-> <br /> Not a Css/Js framework. Actually not even a framewwork.
+> <br /> Not a Css/Js framework. Actually not even a framework.
 > </summary>
 > <hr />
 > So what is it then? It's a **major fix for a minor problem**. A problem that
@@ -237,7 +237,7 @@ Unified rulesets for team-enforced styling systems. Create immutable libraries, 
 > That's the tricky part. It lives in this weird intersection between tools we already use.  
 > It comes with a **macro system for XML/HTML-like syntax**, but instead of shipping with a mountain of prebuilt classes like typical CSS frameworks, it lets you start from zero — or bring your own if you prefer.
 >
-> There's a **standerdized syntax** for CSS frameworks if you want it, and built-in **scoped classes**, **compile-time unique ID hashing**, and **inline cascade control**. It also offers a **CSS framework that grows and adapts with your project**, **multi-mode stylesheet generation**, and **isolated component composition with live previews**.
+> There's a **standardized syntax** for CSS frameworks if you want it, and built-in **scoped classes**, **compile-time unique ID hashing**, and **inline cascade control**. It also offers a **CSS framework that grows and adapts with your project**, **multi-mode stylesheet generation**, and **isolated component composition with live previews**.
 >
 > It's not a framework in the traditional sense — more like a creative toolbox that bends around your workflow.
 >
