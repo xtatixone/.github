@@ -99,7 +99,6 @@ During the preview period, your support unlocks amazing new capabilities for eve
 </summary>
 <hr />
 
-
 These feature alone gives you the a CSS framework that work along side your project starting from Zero.
 
 ![Preview](../assets/feature/0_essentials.gif)
@@ -197,7 +196,27 @@ With instant server-side updates for every edit, your feedback loop is now insta
 
 </details>
 
-feature$$5
+
+<details>
+
+<summary>
+  <b>Mission 5: 🍧 Flavours </b>
+  <br />
+  Build & share custom CSS frameworks on Alchira.
+</summary>
+<hr />
+
+Unified rulesets for team-enforced styling systems. Create immutable libraries, extend Sketchpad features, and ship config blueprints.
+
+- **Team Standards** → Enforce consistent practices across projects  
+- **Immutable Libraries** → Lock core styles, extend safely  
+- **Personalize Sketchpad** → Build custom UIs/workflows from your preferred tools  
+- **Config Blueprints** → One-click project kickstarts  
+
+[**Spin your flavor →**](https://github.com/alchira/scaffold)
+
+</details>
+
 
 ---
 
