@@ -70,7 +70,7 @@ During the preview period, your support unlocks amazing new capabilities for eve
 >
 > New capabilities are unlocked by community funding. 
 > 
-> _(Expand to know more about feature release lyfecycle.)_
+> _(Expand to know more about feature release lifecycle.)_
 > </summary>
 > 
 > | Phase | Status | Activity |
