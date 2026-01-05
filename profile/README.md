@@ -12,13 +12,119 @@
   </b>
 
 
-![Banner](../assets/banner.png)
+### Alchira: Start Simple, Scale When You Need
 
-"Do you see it, Edward? Look closely at the stream. For decades, they told us these two souls—HTML and CSS—must live in separate vessels. They called it 'separation of concerns.' I call it a tragedy of fragmentation.
 
-But look now... there is no 'link' tag. There is no 'external stylesheet.' I have spliced the DNA of the structure directly into the spirit of the style. They are no longer two things pretending to be one; they are a Successful Fusion.
+#### Level 1: Want to use Utility classes?
 
-It's stable, Edward. It's declarative. It's... beautiful. We've created a Chimera that doesn't just bark—it renders."
+Use ~ to trigger class loading in place:
+
+<div class="~flex ~flex-col">
+  Click me
+</div>
+
+Provided that these classes are either available in libraries, or defined atlease once.
+
+
+#### Level 2: Just want create new style?
+
+Add $ for local scope:
+```html
+<div class="~$button_lu" >
+  Click me
+</div>
+```
+
+That's it. Styles with structure. No separate CSS file.
+Reusable in same file.
+```html
+<button class="~$button_lu">
+```
+
+#### Level 3: Want reusable components?
+
+Add $$ for global scope:
+```html
+<div class="~$$button" >
+  Click me
+</div>
+```
+Now its reusable accross project.
+
+
+#### Level 4: What to group styles?
+
+Add prefix as group identifier
+```html
+<div class="~group$$button" >
+  Click me
+</div>
+```
+Autosuggestions collects these in to separate groups and make navigation easier.
+
+
+#### Level 5: Want to create varients?
+
+Declare varients using attribute selectors like native CSS.
+```html
+<div class="~L5$$button" varient-1  >
+  Click me
+</div>
+```
+Variables are exposed in tooltips for along with the comments, if hovered over it.
+
+
+#### Level 6: Extented styles later?
+
+Extend using attribute selectors like native CSS.
+```html
+<div class="~L5$$button L6$extend-localy" varient-3 >
+  Click me
+</div>
+```
+The exposed variables will assit in providing the contract by existing classes.
+
+
+#### Level 7: Want to wrap you class in other selectors and Queries?
+
+```html
+<div class="L7$style" 
+
+>
+  Click me
+</div>
+```
+will be compiled to
+```css
+.L7$style {
+    color: black
+}
+
+@media (min-width: 620px) {
+    .L7$style {
+        color: red;
+    }
+}
+```
+
+You can even chain multiple queries with:
+    `{Query}&{.parent-class}&{[varient-state]}&="..."`
+
+
+#### Level 8: Need cascade control?
+- `~` for utilities (basic)
+- `+` for components (stricter overides)
+- `=` for overrides (final overides)
+
+Multiple declarations will be used for establish the oranizaion of classes in while resolving inline classes. but it will help in the long run
+
+#### Level 9: Need to design components in Isolation?
+
+Use `<sketch> </sketch>` tag
+```html
+
+```
+These components can be previewed in your editor webview, with live output
 
 ### Install and Setup
 
