@@ -12,13 +12,19 @@
   </b>
 
 
+# Alchira:
+
+---
+> [!Note]
+> ### What is a WebUI Workbench
+> A WebUI Workbench is an editor-native environment for building, previewing, and evolving web UI systems without framework or runtime lock-in.  
+> Unlike CSS frameworks or component libraries that optimize for speed, a WebUI Workbench optimizes for change safety — enabling refactors, redesigns, theming, and long-term maintenance with predictable outcomes.  
+> It produces standard HTML and CSS, works with any stack, and scales from stitched one-off pages to full design systems.  
 ---
 
-### Alchira: A supercharger for Vanilla(HTML/CSS) stack
+> Some tags starts with `\<` as escape charector for tags, in the following examples.
 
-> Some tags starts with `\<` as escape charector for tags
-
-#### Level 1: Want to use Utility classes?
+### Level 1: Want to use Utility classes?
 
 Use ~ to trigger class loading in place:
 ```html
@@ -32,22 +38,42 @@ Using `~` trigger avoids colltion with other desing systems.
 Using `\~` trigger to load classnames outside html tags.  
 
 
-#### Level 2: Just want create new style?
+### Level 2: Just want create new style?
 
-Add $ for local scope:
+Use $ forlocal scope:
 ```html
-\<div class="~$button" _$button="padding: 1rem; background: blue;">
+\<button 
+class="~$button-1" 
+_$button-1="
+  padding: 1rem; 
+  background: blue;
+">
   {{content}}
-</div>
+</button>
 ```
 
 That's it. Styles with structure. No separate CSS file.
 Reusable in same file.
+
 ```html
 <button class="~$button">
 ```
 
-#### Level 3: Want reusable components?
+Alternatively compose like utility classes and add custom attrubutes later.  
+Use CSS like nesting for for states control.
+
+```html
+\<div 
+class="~$button-3" 
+_$button-3="
+  + p-4 bg-blue; 
+  &:hover { scale: 1.01; }
+">
+  {{content}}
+</div>
+```
+
+### Level 3: Want scope styles globally?
 
 Add $$ for global scope:
 ```html
@@ -58,7 +84,7 @@ Add $$ for global scope:
 Now its reusable accross project.
 
 
-#### Level 4: What to group styles?
+### Level 4: What to group styles?
 
 Add prefix as group identifier
 ```html
@@ -69,7 +95,7 @@ Add prefix as group identifier
 Autosuggestions collects these in to separate groups and make navigation easier.
 
 
-#### Level 5: Want to create varients?
+### Level 5: Want to create varients?
 
 Declare varients using attribute selectors like native CSS.
 ```html
@@ -86,7 +112,7 @@ Declare varients using attribute selectors like native CSS.
 Variables are exposed in tooltips for along with the comments, if hovered over it.
 
 
-#### Level 6: Extented styles later?
+### Level 6: Extented styles later?
 
 Extend using attribute selectors like native CSS.
 ```html
@@ -100,7 +126,7 @@ Extend using attribute selectors like native CSS.
 The exposed variables will assit in providing the contract by existing classes. 
 
 
-#### Level 7: Want to wrap you class in other selectors and Queries?
+### Level 7: Want to wrap you class in other selectors and Queries?
 
 ```html
 \<div class="L7$style" L7$style="color: black;"
@@ -126,14 +152,14 @@ You can even chain multiple queries with:
     `{Query}&{.parent-class}&{[varient-state]}&="..."`
 This replaces writing media queries and state control like theme-switching.
 
-#### Level 8: Need cascade control?
+### Level 8: Need cascade control?
 - `~` for utilities (basic)
 - `+` for components (stricter overides)
 - `=` for overrides (final overides)
 
-Multiple declarations will be used for establish the oranizaion of classes in while resolving inline classes. but it will help in the long run
+Multiple declarations will be used for establish the organizaion of classes in while resolving inline classes. but it will help in the long run
 
-#### Level 9: Want to prevent Classname/ID leakage?
+### Level 9: Want to prevent Classname/ID leakage?
 
 Use `<sketch> </sketch>` tag
 ```html
@@ -147,7 +173,7 @@ Use `<sketch> </sketch>` tag
 ```
 *Needs configs to be properly configured*
 
-#### Level 10: Need to design components in Isolation?
+### Level 10: Need to design components in Isolation?
 
 Use `<sketch> </sketch>` tag
 ```html
