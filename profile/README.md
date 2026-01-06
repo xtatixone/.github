@@ -12,14 +12,14 @@
   </b>
 
 
-# Alchira:
-
----
 > [!Note]
 > ### What is a WebUI Workbench
-> A WebUI Workbench is an editor-native environment for building, previewing, and evolving web UI systems without framework or runtime lock-in.  
+> A WebUI Workbench is an editor-native environment for building, previewing, and evolving web UI systems without framework or runtime lock-in. 
+>  
 > Unlike CSS frameworks or component libraries that optimize for speed, a WebUI Workbench optimizes for change safety — enabling refactors, redesigns, theming, and long-term maintenance with predictable outcomes.  
+>
 > It produces standard HTML and CSS, works with any stack, and scales from stitched one-off pages to full design systems.  
+>
 ---
 
 > Some tags starts with `\<` as escape charector for tags, in the following examples.
@@ -40,7 +40,7 @@ Using `\~` trigger to load classnames outside html tags.
 
 ### Level 2: Just want create new style?
 
-Use $ forlocal scope:
+Use $ for local scope:
 ```html
 \<button 
 class="~$button-1" 
