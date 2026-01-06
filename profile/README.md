@@ -23,7 +23,6 @@
 >
 > It produces standard HTML and CSS, works with any stack, and scales from stitched one-off pages to full design systems.  
 >
-> 80%
 ---
 
 > Some tags starts with `\<` as escape charector for tags, in the following examples.
