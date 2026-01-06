@@ -1,4 +1,5 @@
 
+
   <b>
     <p align="center">
       <a href="https://github.com/alchira/package/wiki">Get Started</a>
@@ -218,8 +219,6 @@ bun add -g alchira       # If you prefer bun
 - **Inline Cascade Control** — Fine-grained style override control directly in markup.  
 - **Adaptive CSS Framework** — A stylesheet system that scales and evolves alongside your project as it grows.
 - **Live Component Preview** — Isolated component composition with real-time updates.  
-- **Creative Toolbox Philosophy** — Not a framework, but a system that flexes around your workflow.
-
 
 ## 🚀 Missions & Feature Unlocks
 
