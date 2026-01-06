@@ -12,40 +12,46 @@
   </b>
 
 
-### Alchira: Start Simple, Scale When You Need
+---
 
+### Alchira: A supercharger for Vanilla(HTML/CSS) stack
+
+> Some tags starts with `\<` as escape charector for tags
 
 #### Level 1: Want to use Utility classes?
 
 Use ~ to trigger class loading in place:
 ```html
-<div class="~flex ~flex-col">
-  Click me
-</div>
+\<div class="~flex ~flex-col"> {{content}} </div>
+<script>
+  const classnames = ["\~flex","\~flex-col"]
+</script>
 ```
-Provided that these classes are either available in libraries, or defined atlease once.
+Provided that these classes are either available in libraries, or defined atlease once.  
+Using `~` trigger avoids colltion with other desing systems.  
+Using `\~` trigger to load classnames outside html tags.  
 
 
 #### Level 2: Just want create new style?
 
 Add $ for local scope:
 ```html
-<div class="~$button_lu" >
-  Click me
+\<div class="~$button" _$button="padding: 1rem; background: blue;">
+  {{content}}
 </div>
 ```
 
 That's it. Styles with structure. No separate CSS file.
 Reusable in same file.
 ```html
-<button class="~$button_lu">
+<button class="~$button">
 ```
 
 #### Level 3: Want reusable components?
 
 Add $$ for global scope:
 ```html
-<div class="~$$button" >
+\<div class="~$$button" _$$button="padding: 1rem; background: blue;">
   Click me
 </div>
 ```
@@ -56,7 +62,7 @@ Now its reusable accross project.
 
 Add prefix as group identifier
 ```html
-<div class="~group$$button" >
+\<div class="~group$$button" group$$button="padding: 1rem; background: blue;">
   Click me
 </div>
 ```
@@ -67,7 +73,13 @@ Autosuggestions collects these in to separate groups and make navigation easier.
 
 Declare varients using attribute selectors like native CSS.
 ```html
-<div class="~L5$$button" varient-1  >
+\<div class="~L5$$button" varient-1 L5$$button="
+    --bg-color: blue;
+    padding: 1rem; 
+    background: var(--bg-color);
+    &[varient-1] { --bg-color: red; }
+    &[varient-2] { --bg-color: green; }
+" &="Add Comments like this.">
   Click me
 </div>
 ```
@@ -78,7 +90,10 @@ Variables are exposed in tooltips for along with the comments, if hovered over i
 
 Extend using attribute selectors like native CSS.
 ```html
-<div class="~L5$$button L6$extend-localy" varient-3 >
+\<div class="~L5$$button L6$extend-localy" varient-3 L6$extend-locally="
+    &[varient-3] { --bg-color: yellow; }
+    &[varient-4] { --bg-color: cyan; }
+">
   Click me
 </div>
 ```
@@ -88,8 +103,8 @@ The exposed variables will assit in providing the contract by existing classes.
 #### Level 7: Want to wrap you class in other selectors and Queries?
 
 ```html
-<div class="L7$style" 
-
+\<div class="L7$style" L7$style="color: black;"
+{@media (min-width: 620px)}&="color: red;"
 >
   Click me
 </div>
@@ -118,13 +133,34 @@ This replaces writing media queries and state control like theme-switching.
 
 Multiple declarations will be used for establish the oranizaion of classes in while resolving inline classes. but it will help in the long run
 
-#### Level 9: Need to design components in Isolation?
+#### Level 9: Want to prevent Classname/ID leakage?
 
 Use `<sketch> </sketch>` tag
 ```html
+<!-- # will get replaced by a unique hash -->
+<div id="_8j_8o_id" class="_8j_8o_class">...</div>
+<script>
+  // Reuse the hash id's by prefixing with "\#"
+  const id = "_8j_8o_id"
+  const classname = "_8j_8o_class"
+</script>
+```
+*Needs configs to be properly configured*
 
+#### Level 10: Need to design components in Isolation?
+
+Use `<sketch> </sketch>` tag
+```html
+\<sketch L10$preview>
+    <div>
+        <h1> Heading </h1>
+        <p> {{contents}} </p>
+        <button> Select </button>
+    </div>
+</sketch>
 ```
 These components can be previewed in your editor webview, with live output
+
 
 ### Install and Setup
 
